@@ -4,4 +4,4 @@ select ID as payment_id
       ,PAYMENTMETHOD as type
       ,status 
       ,created
-from raw.stripe.payments
+from {{ source('stripe', 'payments') }}
