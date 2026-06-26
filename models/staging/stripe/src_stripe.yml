@@ -6,8 +6,8 @@ sources:
     schema: stripe
     tables:
       - name: payments
-        loaded_at_field: CAST(created AS timestamp)
         config:
+          loaded_at_field: CAST(created AS timestamp)
           freshness:
             warn_after: {count: 70000, period: hour}  
             error_after: {count: 80000, period: hour}
